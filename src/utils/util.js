@@ -62,7 +62,7 @@ export const initMenu = (router, menu) => {
   }
   menus.push(unfound)
   router.addRoutes(menus)
-  store.commit('ADD_ROUTERS', menus)
+  //store.commit('ADD_ROUTERS', menus)
 }
 
 export const formatRoutes = (aMenu) => {

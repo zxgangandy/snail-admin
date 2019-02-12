@@ -54,7 +54,7 @@
 
 <script>
 import { isvalidUsername } from '@/utils/validate'
-import { randomLenNum } from '@/utils/utils'
+import { randomLenNum } from '@/utils/util'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -143,8 +143,9 @@ export default {
           this.loading = true
           this.$store.dispatch('LoginByUsername', this.loginForm).then(res => {
             this.loading = false
+            console.log("1111111")
             //this.$store.commit('ADD_TAG', this.tagWel)
-            console.log("tagwel: "+ this.tagWel.value)
+            //console.log("tagwel: "+ this.tagWel.value)
             //this.$router.push({ path: this.tagWel.value })
 
             this.$router.push({ path: '/'})

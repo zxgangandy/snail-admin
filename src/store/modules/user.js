@@ -1,7 +1,9 @@
 import { login, logout, getUserInfo } from '@/api/login'
 import { getToken, setToken, removeToken } from '@/utils/auth'
-import { encryption } from '@/utils/utils'
+import { encryption } from '@/utils/util'
 import { setStore, getStore } from '@/utils/store'
+import { validatenull } from '@/utils/validate'
+import { GetMenu } from '@/api/menu'
 
 const user = {
   state: {
@@ -111,7 +113,7 @@ const user = {
         login(user.username, user.password, user.code, user.randomStr).then(response => {
           const data = response.data
 
-          console.log("LoginByUsername: " + data)
+          console.log("LoginByUsername: " + JSON.stringify(data))
 
           setToken(data.access_token)
           commit('SET_ACCESS_TOKEN', data.access_token)
@@ -164,9 +166,7 @@ const user = {
       })
     },
     // 注销session
-    FedLogOut({
-                commit
-              }) {
+    FedLogOut({commit}) {
       return new Promise(resolve => {
         // 清除菜单
         commit('SET_MENU', [])
@@ -183,22 +183,21 @@ const user = {
       })
     },
     // 获取系统菜单
-    GetMenu({
-              commit
-            }) {
-      return new Promise(resolve => {
-        GetMenu().then((res) => {
-          const data = res.data
-          data.forEach(ele => {
-            ele.children.forEach(child => {
-              if (!validatenull(child.component)) child.path = `${ele.path}/${child.path}`
-            });
-          });
-          commit('SET_MENU', data)
-          resolve(data)
-        })
-      })
-    }
+    // GetMenu({commit}) {
+    //   return new Promise(resolve => {
+    //     GetMenu().then((res) => {
+    //       const data = res.data
+    //       console.log("data22: " + JSON.stringify(data))
+    //       data.forEach(ele => {
+    //         ele.children.forEach(child => {
+    //           if (!validatenull(child.component)) child.path = `${ele.path}/${child.path}`
+    //         });
+    //       });
+    //       commit('SET_MENU', data)
+    //       resolve(data)
+    //     })
+    //   })
+    // }
   }
 }
 
