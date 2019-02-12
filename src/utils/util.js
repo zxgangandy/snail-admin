@@ -3,6 +3,8 @@ import {
   validatenull
 } from './validate'
 
+import store from '../store'
+
 /**
  * 生成随机len位数字
  */
@@ -62,7 +64,7 @@ export const initMenu = (router, menu) => {
   }
   menus.push(unfound)
   router.addRoutes(menus)
-  //store.commit('ADD_ROUTERS', menus)
+  store.commit('ADD_ROUTERS', menus)
 }
 
 export const formatRoutes = (aMenu) => {

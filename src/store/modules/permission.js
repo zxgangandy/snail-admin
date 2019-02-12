@@ -39,13 +39,14 @@ const permission = {
       return new Promise(resolve => {
         GetMenu().then((res) => {
           const data = res.data
+          console.log("getmenu: "+ JSON.stringify(data))
           data.forEach(ele => {
             if (ele.children) {
               ele.children.forEach(child => {
                 if (!validatenull(child.component)) {
                   if (validateURL(child.path)) {
                     child.path = `${child.path}`
-                    console.log(child.path)
+                    console.log("getmenu111: "+child.path)
                   } else {
                     child.path = `${ele.path}/${child.path}`
                   }
@@ -53,6 +54,7 @@ const permission = {
               })
             }
           })
+          console.log("getmenu222: "+ JSON.stringify(data))
           commit('SET_ROUTERS', data)
           resolve(data)
         })
