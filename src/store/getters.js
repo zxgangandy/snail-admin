@@ -1,4 +1,5 @@
 const getters = {
+  sidebar: state => state.app.sidebar,
   tag: state => state.tags.tag,
   website: state => state.common.website,
   theme: state => state.common.theme,
@@ -14,6 +15,8 @@ const getters = {
   roles: state => state.user.roles,
   permissions: state => state.user.permissions,
   menu: state => state.user.menu,
-  errLog: state => state.errLog.errLog
+  errLog: state => state.errLog.errLog,
+  permission_routers: state => state.permission.routers,
+  addRouters: state => state.permission.addRouters
 }
 export default getters
