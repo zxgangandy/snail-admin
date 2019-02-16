@@ -48,7 +48,7 @@
       width: 100% !important;
     }
     .is-active > .el-submenu__title{
-      color: #f4f4f5!important;
+      color: #303133!important;
     }
   }
   .hideSidebar {
@@ -92,8 +92,11 @@
   .sidebar-container .el-submenu .el-menu-item {
     min-width: 180px !important;
     background-color: $subMenuBg !important;
+    &.is-active{
+      background-color: #409EFF !important;
+    }
     &:hover {
-      background-color: $menuHover !important;
+      background-color: transparent !important;
     }
   }
   .el-menu--collapse .el-menu .el-submenu {
