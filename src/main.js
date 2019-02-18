@@ -11,13 +11,22 @@ import '@/styles/index.scss' // global css
 import App from './App'
 import router from './router'
 import store from './store'
+import { loadStyle } from './utils/util'
 
 import '@/icons' // icon
 import '@/permission' // permission control
 
+let iconfontVersion = ['567566_qo5lxgtishg', '667895_vf6hgm08ubf']
+let iconfontUrl = `//at.alicdn.com/t/font_$key.css`
+
 Vue.use(ElementUI, { locale })
 
 Vue.config.productionTip = false
+
+iconfontVersion.forEach(ele => {
+  loadStyle(iconfontUrl.replace('$key', ele))
+})
+
 
 new Vue({
   el: '#app',
