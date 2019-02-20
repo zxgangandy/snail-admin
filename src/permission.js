@@ -11,13 +11,16 @@ router.beforeEach((to, from, next) => {
 
   console.log("permission111: " + to.path)
   if (store.getters.access_token) {
+    console.log("permission222: " + to.path)
     if (to.path === '/login') {
+      console.log("permission333: " + to.path)
       next({path: '/'})
       NProgress.done() // if current page is dashboard will not trigger	afterEach hook, so manually handle it
     } else {
       console.log("path22: " + to.path)
 
       if (store.getters.roles.length === 0) {
+        console.log("path33: " + to.path)
         store.dispatch('GetUserInfo').then(res=>{
           console.log("GetUserInfo: "+JSON.stringify(res.data))
 

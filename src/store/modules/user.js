@@ -13,9 +13,7 @@ const user = {
     permissions: getStore({
       name: 'permissions'
     }) || {},
-    roles: getStore({
-      name: 'roles'
-    }) || [],
+    roles:[],
     menu: getStore({
       name: 'menu'
     }) || [],
@@ -130,6 +128,7 @@ const user = {
     GetUserInfo({ commit, state }) {
       return new Promise((resolve, reject) => {
         getUserInfo(state.token).then(response => {
+          console.log("userinfo: " + JSON.stringify(response))
           const data = response.data.data
           commit('SET_ROLES', data.roles)
           commit('SET_USER_INFO', data.sysUser)
