@@ -26,8 +26,10 @@
       <el-form-item prop="code">
         <el-row :span="24">
           <el-col :span="14">
+            <span class="svg-container">
+              <svg-icon icon-class="star" />
+            </span>
             <el-input v-model="loginForm.code" :maxlength="code.len" size="small" auto-complete="off" placeholder="请输入验证码" @keyup.enter.native="handleLogin" >
-              <i slot="prefix" class="icon-yanzhengma"></i>
             </el-input>
           </el-col>
           <el-col :span="10">
@@ -184,6 +186,12 @@ $light_gray:#eee;
         -webkit-box-shadow: 0 0 0px 1000px $bg inset !important;
         -webkit-text-fill-color: #fff !important;
       }
+    }
+  }
+  .login-code{
+    height: 47px;
+    .login-code-img{
+      padding: 5px 0px 0px 20px;
     }
   }
   .el-form-item {
