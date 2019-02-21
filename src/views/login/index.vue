@@ -27,7 +27,7 @@
         <el-row :span="24">
           <el-col :span="14">
             <span class="svg-container">
-              <svg-icon icon-class="star" />
+              <svg-icon icon-class="validCode" />
             </span>
             <el-input v-model="loginForm.code" :maxlength="code.len" size="small" auto-complete="off" placeholder="请输入验证码" @keyup.enter.native="handleLogin" >
             </el-input>

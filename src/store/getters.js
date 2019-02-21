@@ -1,6 +1,7 @@
 const getters = {
   sidebar: state => state.app.sidebar,
   tag: state => state.tags.tag,
+  device: state => state.app.device,
   website: state => state.common.website,
   theme: state => state.common.theme,
   isCollapse: state => state.common.isCollapse,
