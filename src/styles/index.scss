@@ -76,3 +76,12 @@ a:hover {
 .app-container {
   padding: 20px;
 }
+
+// search-container全局样式
+.search-container{
+  padding: 10px 10px 20px 0;
+}
+.search-container .search-inp-container{
+  padding-right: 10px;
+  float: left;
+}
