@@ -1,12 +1,10 @@
 <template>
   <div class="navbar" >
-    <hamburger :toggle-click="toggleSideBar" :is-active="isCollapse" class="hamburger-container"/>
+    <hamburger :toggle-click="toggleSideBar" :is-active="sidebar.opened" class="hamburger-container"/>
     <breadcrumb />
 
     <div class="right-menu">
       <template v-if="device!=='mobile'">
-
-        <screenfull class="right-menu-item hover-effect"/>
 
         <el-tooltip content="主题" effect="dark" placement="bottom">
           <theme-picker class="theme-switch right-menu-item" />
@@ -37,14 +35,12 @@
 import { mapGetters } from 'vuex'
 import Breadcrumb from '@/components/Breadcrumb'
 import Hamburger from '@/components/Hamburger'
-import Screenfull from '@/components/Screenfull'
 import ThemePicker from '@/components/ThemePicker'
 
 export default {
   components: {
     Breadcrumb,
     Hamburger,
-    Screenfull,
     ThemePicker
   },
   computed: {
