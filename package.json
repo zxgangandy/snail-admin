@@ -15,14 +15,15 @@
   },
   "dependencies": {
     "axios": "0.18.0",
+    "crypto-js": "^3.1.9-1",
     "element-ui": "2.4.6",
     "js-cookie": "2.2.0",
+    "moment": "^2.22.2",
     "normalize.css": "7.0.0",
     "nprogress": "0.2.0",
     "vue": "2.5.17",
     "vue-router": "3.0.1",
-    "vuex": "3.0.1",
-    "crypto-js": "^3.1.9-1"
+    "vuex": "3.0.1"
   },
   "devDependencies": {
     "autoprefixer": "8.5.0",

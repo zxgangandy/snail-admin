@@ -10,7 +10,7 @@
       </app-link>
     </template>
 
-    <el-submenu v-else :index="resolvePath(item.path)">
+    <el-submenu v-else ref="submenu" :index="resolvePath(item.path)">
       <template slot="title">
         <item v-if="item.meta" :icon="item.meta.icon" :title="item.meta.title" />
       </template>
