@@ -7,7 +7,7 @@
         </el-option>
       </el-select>
       <el-button v-if="sys_log_index_select" class="search-btn" type="primary" icon="el-icon-search" @click="getData">查询</el-button>
-      <el-button class="search-btn" :autofocus="true" icon="el-icon-refresh" @click="refreshHandle">刷新</el-button>
+      <el-button class="search-btn" :autofocus="true" icon="el-icon-search" @click="refreshHandle">搜索</el-button>
     </div>
 
     <el-table :key='tableKey' :data="list" v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row style="width: 99%">
