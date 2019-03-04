@@ -16,8 +16,8 @@ import { loadStyle } from './utils/util'
 import '@/icons' // icon
 import '@/permission' // permission control
 
-let iconfontVersion = ['1054746_v940bk3qvga', '667895_vf6hgm08ubf']
-let iconfontUrl = `//at.alicdn.com/t/font_$key.css`
+const iconfontVersion = ['1070038_hmyq7t18w5']
+const iconfontUrl = `//at.alicdn.com/t/font_$key.css`
 
 Vue.use(ElementUI, { locale })
 
@@ -26,7 +26,6 @@ Vue.config.productionTip = false
 iconfontVersion.forEach(ele => {
   loadStyle(iconfontUrl.replace('$key', ele))
 })
-
 
 new Vue({
   el: '#app',
