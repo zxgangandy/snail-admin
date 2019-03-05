@@ -10,7 +10,7 @@
       <el-button class="search-btn" :autofocus="true" icon="el-icon-search" @click="refreshHandle">搜索</el-button>
     </div>
 
-    <el-table :key='tableKey' :data="list" v-loading="listLoading" element-loading-text="给我一点时间" border fit highlight-current-row style="width: 99%">
+    <el-table :key='tableKey' :data="list" v-loading="listLoading" element-loading-text="请稍等片刻，数据加载中..." border fit highlight-current-row style="width: 99.5%">
       <el-table-column align="center" label="序号">
         <template slot-scope="scope">
           <span>{{ getSerialNumber(scope.$index) }}</span>
