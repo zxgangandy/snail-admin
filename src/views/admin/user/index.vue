@@ -68,7 +68,7 @@
 
     </el-table>
 
-    <div v-show="!listLoading" class="pagination-container">
+    <div v-show="!listLoading" class="pagination-container" style="margin-top: 5px">
       <el-pagination @size-change="handleSizeChange" @current-change="handleCurrentChange" :current-page.sync="listQuery.page" :page-sizes="[10,20,30, 50]" :page-size="listQuery.limit" layout="total, sizes, prev, pager, next, jumper" :total="total">
       </el-pagination>
     </div>
