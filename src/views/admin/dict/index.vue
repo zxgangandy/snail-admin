@@ -48,12 +48,10 @@
           <span>{{ scope.row.remarks }}</span>
         </template>
       </el-table-column>
-      <el-table-column label="操作" width="200">
+      <el-table-column label="操作" align="center" fixed="right" width="180" >
         <template slot-scope="scope">
-          <el-button v-if="sys_dict_upd" size="mini" type="success" @click="handleUpdate(scope.row)">编辑
-          </el-button>
-          <el-button v-if="sys_dict_del" size="mini" type="danger" @click="handleDelete(scope.row)">删除
-          </el-button>
+          <el-button v-if="sys_dict_upd" size="mini" type="primary" @click="handleUpdate(scope.row)">编辑</el-button>
+          <el-button v-if="sys_dict_del" size="mini" type="danger" @click="handleDelete(scope.row)">删除</el-button>
         </template>
       </el-table-column>
     </el-table>
